@@ -115,6 +115,12 @@ pub mod archive {
         /// the CIP-129 DRep id bytes: the key-or-script header, then the
         /// credential hash.
         DREP_CERTS = "drep_certs";
+
+        /// Script hash of every script that a redeemer executed, resolved at
+        /// index time. Unlike SCRIPT, this tags executions that carry no
+        /// script bytes (reference scripts) and covers all purposes,
+        /// including vote and propose.
+        SCRIPT_REDEEMERS = "script_redeemers";
     }
 }
 
@@ -154,6 +160,7 @@ mod tests {
                 "account_withdrawals",
                 "metadata",
                 "drep_certs",
+                "script_redeemers",
             ]
         );
     }
