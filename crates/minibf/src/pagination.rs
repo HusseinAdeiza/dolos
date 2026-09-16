@@ -214,6 +214,10 @@ impl Pagination {
         ((self.page - 1) * self.count as u64) as usize
     }
 
+    pub fn to(&self) -> usize {
+        (self.count as u64 * self.page) as usize
+    }
+
     pub fn skip(&self) -> usize {
         self.from()
     }
